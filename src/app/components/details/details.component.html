@@ -2,16 +2,22 @@
   <div class="game-banner">
     <img
       class="game-banner-image"
-      src="https://cdn.pocket-lint.com/r/s/970x/assets/images/133845-games-review-the-witcher-3-wild-hunt-review-image1-07yik9ul5s.jpg"
+      src="{{ game.background_image }}"
       alt="background image"
     />
   </div>
   <div class="game-content">
     <div class="detail-wrapper">
       <div class="game-header">
-        <h1 class="game-header-title">Game name</h1>
-        <h2 class="game-header-release-date">release 24.05.2021</h2>
-        <p class="game-header-genre"><span>Aventura</span></p>
+        <h1 class="game-header-title">{{ game.name }}</h1>
+        <h2 class="game-header-release-date">
+          Release: {{ game.released | date }}
+        </h2>
+        <p class="game-header-genre">
+          <span *ngFor="let genre of game.genres; let last = last"
+            >{{ genre.name }}<span *ngIf="!last">, </span></span
+          >
+        </p>
         <div class="game-gauge">
           <mwl-gauge
             class="two"
@@ -24,7 +30,12 @@
             [animationDuration]="2"
           >
           </mwl-gauge>
-          <a class="game-gauge-label" target="_blank" href="">Metacritic</a>
+          <a
+            class="game-gauge-label"
+            target="_blank"
+            href="{{ game.metacritic_url }}"
+            >Metacritic</a
+          >
         </div>
       </div>
       <!--Here will go tabs-->
