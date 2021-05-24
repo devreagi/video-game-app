@@ -1,0 +1,33 @@
+<div class="details">
+  <div class="game-banner">
+    <img
+      class="game-banner-image"
+      src="https://cdn.pocket-lint.com/r/s/970x/assets/images/133845-games-review-the-witcher-3-wild-hunt-review-image1-07yik9ul5s.jpg"
+      alt="background image"
+    />
+  </div>
+  <div class="game-content">
+    <div class="detail-wrapper">
+      <div class="game-header">
+        <h1 class="game-header-title">Game name</h1>
+        <h2 class="game-header-release-date">release 24.05.2021</h2>
+        <p class="game-header-genre"><span>Aventura</span></p>
+        <div class="game-gauge">
+          <mwl-gauge
+            class="two"
+            [max]="100"
+            [dialStartAngle]="180"
+            [dialEndAngle]="0"
+            [value]="gameRating"
+            [animated]="true"
+            [color]="getColor"
+            [animationDuration]="2"
+          >
+          </mwl-gauge>
+          <a class="game-gauge-label" target="_blank" href="">Metacritic</a>
+        </div>
+      </div>
+      <!--Here will go tabs-->
+    </div>
+  </div>
+</div>
